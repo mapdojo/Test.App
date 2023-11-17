@@ -39,7 +39,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 // FIXME: Why is this required?
-builder.Services.AddSingleton<TestViewModel>();
+// builder.Services.AddSingleton<TestViewModel>();
 
 var app = builder.Build();
 
