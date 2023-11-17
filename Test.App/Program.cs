@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Test.App.Client.Pages;
+using Test.App.Client.ViewModels;
 using Test.App.Components;
 using Test.App.Components.Account;
 using Test.App.Data;
@@ -36,6 +37,9 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+// FIXME: Why is this required?
+builder.Services.AddSingleton<TestViewModel>();
 
 var app = builder.Build();
 
